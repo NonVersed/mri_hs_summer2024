@@ -67,7 +67,7 @@ def readmda(fname,folder=os.getcwd(),dtype=np.double):
         imag_part = data_stream[1:length_data_stream:2].copy().reshape(matrix_dims,order='F')
         
         if np.count_nonzero(imag_part.flatten())>0:
-            dtype = np.complex
+            dtype = np.complex64
             raw_data = real_part + 1j*imag_part
         else:
             raw_data = real_part.astype(dtype=dtype)
